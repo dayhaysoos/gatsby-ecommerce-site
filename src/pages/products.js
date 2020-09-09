@@ -1,6 +1,6 @@
 import React from "react"
-import { Box, Grid, Flex, Image, Button } from "theme-ui"
-import { graphql } from "gatsby"
+import { Box, Grid, Flex, Image } from "theme-ui"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import { formatCurrencyString } from "use-shopping-cart"
 
@@ -28,7 +28,12 @@ function Products({ data }) {
       <Grid columns={4}>
         {products.map(product => {
           return (
-            <Flex key={product.id} css={{ flexDirection: "column" }}>
+            <Flex
+              as={Link}
+              to={`/products/${product.slug}`}
+              key={product.id}
+              css={{ flexDirection: "column" }}
+            >
               <Image src={product.image} />
               <Box as="p">{product.name}</Box>
               <Box as="p">

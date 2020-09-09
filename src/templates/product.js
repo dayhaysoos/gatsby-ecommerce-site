@@ -1,20 +1,19 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import Product from "../components/product"
 
 export const query = graphql`
-  {
-    allProduct {
-      nodes {
-        slug
-        currency
-        description
-        id
-        image
-        name
-        price
-        sku
-      }
+  query($slug: String!) {
+    product(slug: { eq: $slug }) {
+      slug
+      currency
+      description
+      id
+      image
+      name
+      price
+      sku
     }
   }
 `
@@ -22,7 +21,7 @@ export const query = graphql`
 const ProductTemplate = ({ data }) => {
   return (
     <Layout>
-      <p>{JSON.stringify(data, null, 2)}</p>
+      <Product product={data.product} />
     </Layout>
   )
 }
