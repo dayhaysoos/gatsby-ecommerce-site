@@ -4,9 +4,11 @@ import { Button, Flex } from "theme-ui"
 import { useShoppingCart } from "use-shopping-cart"
 
 function ShoppingCartIcon() {
-  const { cartCount, handleCartClick, shouldDisplayCart } = useShoppingCart()
+  const { cartCount, handleCartClick } = useShoppingCart()
+
   return (
     <Button
+      onClick={handleCartClick}
       sx={{
         display: "flex",
         transition: "all .2s ease",
@@ -24,12 +26,12 @@ function ShoppingCartIcon() {
           style={{
             flexDirection: "column",
             position: "relative",
-            bottom: "4px",
+            bottom: "8px",
             right: "8px",
             backgroundColor: "teal",
             borderRadius: "50%",
-            height: "18px",
-            width: "18px",
+            height: "24px",
+            width: "24px",
             justifyContent: "center",
             backgroundColor: "gray",
           }}
