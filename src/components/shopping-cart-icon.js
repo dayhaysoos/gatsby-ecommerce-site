@@ -26,12 +26,12 @@ function ShoppingCartIcon() {
           style={{
             flexDirection: "column",
             position: "relative",
-            bottom: "8px",
+            bottom: "16px",
             right: "8px",
             backgroundColor: "teal",
             borderRadius: "50%",
-            height: "24px",
-            width: "24px",
+            height: "32px",
+            width: "32px",
             justifyContent: "center",
             backgroundColor: "gray",
           }}
