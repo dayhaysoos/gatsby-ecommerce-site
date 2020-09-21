@@ -5,6 +5,7 @@ import { useShoppingCart, formatCurrencyString } from "use-shopping-cart"
 function Product({ product }) {
   const { image, currency, description, price } = product
   const { addItem } = useShoppingCart()
+
   return (
     <Box
       sx={{
@@ -29,7 +30,7 @@ function Product({ product }) {
             <Box as="p">{formatCurrencyString({ value: price, currency })}</Box>
           </Box>
           <Button
-            onClick={() => addItem(product.sku)}
+            onClick={() => addItem(product)}
             sx={{ backgroundColor: "teal" }}
             alt="Add To Cart"
           >
