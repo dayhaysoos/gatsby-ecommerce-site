@@ -20,6 +20,7 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^3.11.0",
+    "stripe": "^8.97.0",
     "theme-ui": "^0.3.1",
     "use-shopping-cart": "^2.1.0"
   },
