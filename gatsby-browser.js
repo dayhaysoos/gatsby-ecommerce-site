@@ -13,7 +13,7 @@ export const wrapRootElement = ({ element }) => {
       currency="USD"
       allowedCountries={["US", "GB", "CA"]}
       billingAddressCollection={true}
-      mode="client-only"
+      mode="checkout-session"
     >
       {element}
     </CartProvider>

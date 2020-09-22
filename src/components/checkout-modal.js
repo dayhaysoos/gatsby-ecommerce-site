@@ -4,13 +4,15 @@ import { useShoppingCart } from "use-shopping-cart"
 import CheckoutDetails from "./checkout-details"
 
 function CheckoutModal() {
-  const { shouldDisplayCart } = useShoppingCart()
-
   return (
     <Box
+      role="dialog"
+      id="dialog1"
+      aria-modal="true"
+      aria-describedby="This is a dialog to learn what's in your cart and proceed to checkout"
+      aria-labelledby="dialog1_label"
       sx={{
         paddingTop: "2rem",
-        display: shouldDisplayCart ? "block" : "none",
         backgroundColor: "rgb(0, 0, 0, .5)",
         overflowY: "auto",
         position: "fixed",
@@ -29,7 +31,9 @@ function CheckoutModal() {
           margin: "0 auto",
         }}
       >
-        <h2 sx={{ textAlign: "center" }}>Your cart</h2>
+        <h2 aria-label="dialog1_label" style={{ textAlign: "center" }}>
+          Your cart
+        </h2>
         <CheckoutDetails />
       </Box>
     </Box>

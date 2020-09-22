@@ -22,6 +22,7 @@ function ShoppingCartIcon() {
       <FaShoppingCart size={30} />
       {cartCount === 0 ? null : (
         <Flex
+          aria-label={`${cartCount} items in your cart, click to check what's in your cart and go to checkout`}
           as="span"
           style={{
             flexDirection: "column",
