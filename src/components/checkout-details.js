@@ -30,12 +30,14 @@ function CheckoutDetails() {
 
   return (
     <Box sx={{ paddingBottom: "24px" }}>
-      <h3 sx={{ textAlign: "center" }}>Checkout Details</h3>
+      <Box tabIndex="0" as="h2" sx={{ textAlign: "center" }}>
+        Checkout Details
+      </Box>
       <Box>
         {Object.keys(cartDetails).map(cartItem => {
           const item = cartDetails[cartItem]
           return (
-            <Flex key={item.sku}>
+            <Flex tabIndex="0" key={item.sku}>
               <Image sx={{ width: "8%" }} src={item.image} />
               <Box sx={{ width: "20%" }}>{item.name}</Box>
               <Box sx={{ width: "20%" }}>
@@ -48,7 +50,8 @@ function CheckoutDetails() {
           )
         })}
       </Box>
-      Total: <span>{formattedTotalPrice}</span>
+      <span>Total Cost:</span>
+      <span>{formattedTotalPrice}</span>
       <Flex sx={{ alignItems: "center", justifyContent: "space-evenly" }}>
         <Button sx={{ backgroundColor: "teal" }} onClick={handleCartClick}>
           Close
