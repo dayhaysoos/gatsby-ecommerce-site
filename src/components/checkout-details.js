@@ -1,12 +1,15 @@
 import React from "react"
 import { useShoppingCart, formatCurrencyString } from "use-shopping-cart"
-import { Box, Flex, Image, Button } from "theme-ui"
+import { Box, Flex, Image, Button, Close } from "theme-ui"
+
+import Select from "./select"
 
 function CheckoutDetails() {
   const {
     cartDetails,
     formattedTotalPrice,
     handleCartClick,
+    removeItem,
     redirectToCheckout,
   } = useShoppingCart()
 
@@ -30,22 +33,32 @@ function CheckoutDetails() {
 
   return (
     <Box sx={{ paddingBottom: "24px" }}>
-      <Box tabIndex="0" as="h2" sx={{ textAlign: "center" }}>
+      <Box
+        tabIndex="0"
+        as="h2"
+        sx={{ textAlign: "center", marginBottom: "36px" }}
+      >
         Checkout Details
       </Box>
       <Box>
         {Object.keys(cartDetails).map(cartItem => {
           const item = cartDetails[cartItem]
           return (
-            <Flex tabIndex="0" key={item.sku}>
-              <Image sx={{ width: "8%" }} src={item.image} />
-              <Box sx={{ width: "20%" }}>{item.name}</Box>
-              <Box sx={{ width: "20%" }}>
+            <Flex sx={{ height: "120px" }} aria tabIndex="0" key={item.sku}>
+              <Image sx={{ objectFit: "contain" }} src={item.image} />
+              <Box>{item.name}</Box>
+              <Box>
                 {formatCurrencyString({ value: item.price, currency: "USD" })}
               </Box>
-              <Box sx={{ width: "20%" }}>{item.description}</Box>
-              <Box sx={{ width: "20%" }}>{item.quantity}</Box>
-              <Box sx={{ width: "20%" }}>{item.formattedValue}</Box>
+              <Box>{item.description}</Box>
+              <Box>{item.quantity}</Box>
+              <Box>{item.formattedValue}</Box>
+              <Select cartItem={item} max="50" />
+              <Close
+                title={"Remove"}
+                aria-label={`Remove ${item.name} from cart`}
+                onClick={() => removeItem(item.sku)}
+              />
             </Flex>
           )
         })}
