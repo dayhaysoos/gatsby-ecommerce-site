@@ -1,8 +1,8 @@
-import React from "react"
-import { Box, Grid, Flex, Image } from "theme-ui"
-import { graphql, Link } from "gatsby"
-import Layout from "../components/layout"
-import { formatCurrencyString } from "use-shopping-cart"
+import React from 'react'
+import { Box, Grid, Flex, Image } from 'theme-ui'
+import { graphql, Link } from 'gatsby'
+import Layout from '../components/layout'
+import { formatCurrencyString } from 'use-shopping-cart'
 
 export const query = graphql`
   {
@@ -26,20 +26,29 @@ function Products({ data }) {
   return (
     <Layout>
       <Grid columns={4}>
-        {products.map(product => {
+        {products.map((product) => {
           return (
             <Flex
               as={Link}
               to={`/products/${product.slug}`}
               key={product.id}
-              css={{ flexDirection: "column" }}
+              sx={{
+                paddingTop: '24px',
+                paddingBottom: '24px',
+                flexDirection: 'column',
+                color: 'primary',
+                justifyContent: 'center',
+                alignItems: 'center',
+                fontWeight: '700',
+                textDecoration: 'none'
+              }}
             >
               <Image src={product.image} />
               <Box as="p">{product.name}</Box>
               <Box as="p">
                 {formatCurrencyString({
                   value: product.price,
-                  currency: "USD",
+                  currency: 'USD'
                 })}
               </Box>
               <Box as="p">{product.description}</Box>

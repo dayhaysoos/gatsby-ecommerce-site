@@ -13,7 +13,7 @@ function Product({ product }) {
         margin: "0 auto",
       }}
     >
-      <Grid columns={[1, 2]}>
+      <Grid sx={{color: 'primary', fontWeight: '700'}} columns={[1, 2]}>
         <Box>
           <Image src={image} />
         </Box>
