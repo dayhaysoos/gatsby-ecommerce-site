@@ -6,9 +6,15 @@ import { useShoppingCart } from "use-shopping-cart"
 function ShoppingCartIcon() {
   const { cartCount, handleCartClick } = useShoppingCart()
 
+  const cartCountDescription = cartCount === 1 ?
+    'There is 1 item in your cart' :
+    `There are ${cartCount} items in your cart`;
+
   return (
     <Button
       onClick={handleCartClick}
+      aria-label="Checkout"
+      aria-describedby="cart-count-description"
       sx={{
         display: "flex",
         transition: "all .2s ease",
@@ -22,7 +28,6 @@ function ShoppingCartIcon() {
       <FaShoppingCart size={30} />
       {cartCount === 0 ? null : (
         <Flex
-          aria-label={`${cartCount} items in your cart, click to check what's in your cart and go to checkout`}
           as="span"
           style={{
             flexDirection: "column",
@@ -40,6 +45,12 @@ function ShoppingCartIcon() {
           {cartCount}
         </Flex>
       )}
+      <span
+        id="cart-count-description"
+        className="visually-hidden"
+      >
+        {cartCountDescription}
+      </span>
     </Button>
   )
 }
