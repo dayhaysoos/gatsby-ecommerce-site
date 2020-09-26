@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
-      {shouldDisplayCart && <CheckoutModal />}
+      <CheckoutModal />
     </>
   )
 }
