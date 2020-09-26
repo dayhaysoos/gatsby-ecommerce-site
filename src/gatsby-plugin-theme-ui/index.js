@@ -8,7 +8,7 @@ export default {
     nav: {
       color: 'white',
       transition: '0.5s all ease',
-      '&:hover': {
+      '&:hover, &:focus': {
         transform: 'scale(1.1)',
         color: 'white',
       }

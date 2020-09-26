@@ -599,7 +599,7 @@ pre tt:after {
 /* Hides content visually, while still exposing it to assistive technologies.
  * https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
  */
-.visually-hidden {
+.visually-hidden:not(:focus) {
   clip: rect(0 0 0 0); 
   clip-path: inset(50%);
   height: 1px;
