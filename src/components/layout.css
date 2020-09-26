@@ -595,3 +595,16 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+/* Hides content visually, while still exposing it to assistive technologies.
+ * https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
+ */
+.visually-hidden {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
