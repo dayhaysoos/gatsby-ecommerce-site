@@ -14,7 +14,6 @@ function Select({ max = 10, cartItem }) {
 
   return (
     <select
-      tabIndex="0"
       value={cartItem.quantity}
       fontSize={"20px"}
       onChange={event => {
