@@ -32,29 +32,51 @@ function CheckoutDetails() {
   }
 
   return (
-    <Box as="form">
-      <Box as="table">
+    <Box  as="form">
+      <Box sx={{marginBottom: '24px'}} as="table">
         <Box as="tr">
-          <Box as="th">Name</Box>
-          <Box as="th">Description</Box>
-          <Box as="th">Total</Box>
-          <Box as="th">Quantity</Box>
+          <Box as="th" scope="col">
+            Name
+          </Box>
+          <Box as="th" scope="col">
+            Description
+          </Box>
+          <Box as="th" scope="col">
+            Total
+          </Box>
+          <Box as="th" scope="col">
+            Quantity
+          </Box>
         </Box>
         {Object.keys(cartDetails).map((cartItem) => {
           const item = cartDetails[cartItem]
           return (
-            <Box as="tr" aria tabIndex="0" key={item.sku}>
-              {/* <Image sx={{ objectFit: 'contain' }} src={item.image} /> */}
-              <Box as="td">{item.name}</Box>
-              <Box as="td">{item.description}</Box>
-              <Box as="td">{item.formattedValue}</Box>
+            <Box as="tr" key={item.sku}>
+              <Box tabIndex="0" as="td" scope="row">
+                {item.name}
+              </Box>
+              <Box tabIndex="0" as="td">
+                {item.description}
+              </Box>
+              <Box tabIndex="0" as="td">
+                {item.formattedValue}
+              </Box>
               <Box as="td">
-                <Select cartItem={item} max="50" />
+                <span
+                  id={'select-description'}
+                  className={'visually-hidden'}
+                >{`Change quantity of ${item.name}`}</span>
+                <Select
+                  aria-describedby={'select-description'}
+                  cartItem={item}
+                  max="50"
+                />
               </Box>
               <Box as="td">
                 <Close
+                  tabIndex="0"
+                  aria-roledescription={`Remove ${item.name} from cart`}
                   title={'Remove'}
-                  aria-label={`Remove ${item.name} from cart`}
                   onClick={() => removeItem(item.sku)}
                 />
               </Box>
@@ -62,6 +84,10 @@ function CheckoutDetails() {
           )
         })}
       </Box>
+      <Flex sx={{ justifyContent: 'space-evenly', alignItems: 'center' }}>
+        <Button onClick={handleCartClick}>Close</Button>
+        <Button onClick={handleSubmit}>Checkout</Button>
+      </Flex>
     </Box>
   )
 }
