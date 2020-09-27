@@ -34,6 +34,9 @@ function CheckoutDetails() {
   return (
     <Box  as="form">
       <Box sx={{marginBottom: '24px'}} as="table">
+        <caption className={`visually-hidden`}>
+          Shopping Cart
+        </caption>
         <Box as="tr">
           <Box as="th" scope="col">
             Name
@@ -52,30 +55,29 @@ function CheckoutDetails() {
           const item = cartDetails[cartItem]
           return (
             <Box as="tr" key={item.sku}>
-              <Box tabIndex="0" as="td" scope="row">
+              <Box as="td" scope="row">
                 {item.name}
               </Box>
-              <Box tabIndex="0" as="td">
+              <Box as="td">
                 {item.description}
               </Box>
-              <Box tabIndex="0" as="td">
+              <Box as="td">
                 {item.formattedValue}
               </Box>
               <Box as="td">
-                <span
-                  id={'select-description'}
-                  className={'visually-hidden'}
-                >{`Change quantity of ${item.name}`}</span>
-                <Select
-                  aria-describedby={'select-description'}
-                  cartItem={item}
-                  max="50"
-                />
+                <label>
+                  <span className={`visually-hidden`}>
+                    Quantity of {item.name}
+                  </span>
+                  <Select
+                    cartItem={item}
+                    max="50"
+                  />
+                </label>
               </Box>
               <Box as="td">
                 <Close
-                  tabIndex="0"
-                  aria-roledescription={`Remove ${item.name} from cart`}
+                  aria-label={`Remove ${item.name} from cart`}
                   title={'Remove'}
                   onClick={() => removeItem(item.sku)}
                 />
