@@ -66,7 +66,7 @@ const IndexPage = () => {
           <Box>
             <Image
               sx={{ backgroundSize: 'contain' }}
-              src={'http://www.fillmurray.com/400/300'}
+              src={'https://www.fillmurray.com/400/300'}
             />
           </Box>
           <Box>
@@ -100,7 +100,7 @@ const IndexPage = () => {
           <Box>
             <Image
               sx={{ backgroundSize: 'contain' }}
-              src={'http://www.fillmurray.com/400/300'}
+              src={'https://www.fillmurray.com/400/300'}
             />
           </Box>
         </Grid>
