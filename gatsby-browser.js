@@ -8,7 +8,7 @@ export const wrapRootElement = ({ element }) => {
   return (
     <CartProvider
       stripe={stripePromise}
-      successUrl={'https://twitter.com/dayhaysoos'}
+      successUrl={`${process.env.URL || 'http://localhost:8888'}/success`}
       cancelUrl={'https://twitter.com/dayhaysoos'}
       currency="USD"
       allowedCountries={['US', 'GB', 'CA']}

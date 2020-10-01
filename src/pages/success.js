@@ -2,7 +2,7 @@ import { Link } from 'gatsby'
 import React from 'react'
 import { useShoppingCart } from 'use-shopping-cart'
 
-function ThankYou() {
+function Success() {
   const { clearCart } = useShoppingCart()
 
   clearCart()
@@ -15,4 +15,4 @@ function ThankYou() {
   )
 }
 
-export default ThankYou
+export default Success
