@@ -1,11 +1,12 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { useStaticQuery, graphql } from 'gatsby'
 
-import Header from "./header"
-import CheckoutModal from "./checkout-modal"
-import { useShoppingCart } from "use-shopping-cart"
-import "./layout.css"
+import Header from './header'
+import CheckoutModal from './checkout-modal'
+import { useShoppingCart } from 'use-shopping-cart'
+import './layout.css'
+import SkipLink from './skip-link'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -22,15 +23,16 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <SkipLink />
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
           margin: `0 auto`,
           maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          padding: `0 1.0875rem 1.45rem`
         }}
       >
-        <main>{children}</main>
+        <main id="main">{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
@@ -43,7 +45,7 @@ const Layout = ({ children }) => {
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 }
 
 export default Layout
