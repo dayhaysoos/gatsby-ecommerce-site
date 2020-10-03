@@ -6,13 +6,19 @@ import { DialogOverlay, DialogContent } from '@reach/dialog'
 import '@reach/dialog/styles.css'
 
 function CheckoutModal() {
-  const { shouldDisplayCart, handleCloseCart } = useShoppingCart()
+  const { shouldDisplayCart, handleCloseCart, cartCount } = useShoppingCart()
   return (
     <DialogOverlay onDismiss={handleCloseCart} isOpen={shouldDisplayCart}>
       <DialogContent
         sx={{ backgroundColor: 'background', width: ['100vw', '90vw'] }}
       >
-        <CheckoutDetails />
+        {cartCount === 0 ? (
+          <h2 sx={{ textAlign: 'center', backgroundColor: 'background' }}>
+            No items in cart
+          </h2>
+        ) : (
+          <CheckoutDetails />
+        )}
       </DialogContent>
     </DialogOverlay>
   )

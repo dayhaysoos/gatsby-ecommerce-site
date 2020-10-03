@@ -13,7 +13,7 @@ function SkipLink() {
         justifyContent: 'center',
         alignItems: 'center'
       }}
-      class="visually-hidden"
+      className="visually-hidden"
     >
       Skip to Content
     </a>

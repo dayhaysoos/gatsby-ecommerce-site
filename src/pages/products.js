@@ -30,11 +30,10 @@ function Products({ data }) {
       <Grid columns={4}>
         {products.map((product) => {
           return (
-            <Box>
+            <Box key={product.id}>
               <Flex
                 as={Link}
                 to={`/products/${product.slug}`}
-                key={product.id}
                 sx={{
                   paddingTop: '24px',
                   paddingBottom: '24px',

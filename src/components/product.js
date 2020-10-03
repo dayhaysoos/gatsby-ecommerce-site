@@ -1,9 +1,10 @@
 import React from 'react'
 import { Box, Button, Grid, Image } from 'theme-ui'
 import { useShoppingCart, formatCurrencyString } from 'use-shopping-cart'
+import SEO from './seo'
 
 function Product({ product }) {
-  const { image, currency, description, price } = product
+  const { name, image, currency, description, price, tags } = product
   const { addItem } = useShoppingCart()
 
   return (
@@ -14,6 +15,7 @@ function Product({ product }) {
         margin: '0 auto'
       }}
     >
+      <SEO title={name} />
       <Grid sx={{ color: 'primary', fontWeight: '700' }} columns={[1, 2]}>
         <Box>
           <Image alt={`${product.name}`} src={image} />
