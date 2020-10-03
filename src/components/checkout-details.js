@@ -32,11 +32,9 @@ function CheckoutDetails() {
   }
 
   return (
-    <Box  as="form">
-      <Box sx={{marginBottom: '24px'}} as="table">
-        <caption className={`visually-hidden`}>
-          Shopping Cart
-        </caption>
+    <Box as="form">
+      <Box sx={{ marginBottom: '24px' }} as="table">
+        <caption className={`visually-hidden`}>Shopping Cart</caption>
         <Box as="tr">
           <Box as="th" scope="col">
             Name
@@ -58,21 +56,14 @@ function CheckoutDetails() {
               <Box as="td" scope="row">
                 {item.name}
               </Box>
-              <Box as="td">
-                {item.description}
-              </Box>
-              <Box as="td">
-                {item.formattedValue}
-              </Box>
+              <Box as="td">{item.description}</Box>
+              <Box as="td">{item.formattedValue}</Box>
               <Box as="td">
                 <label>
                   <span className={`visually-hidden`}>
                     Quantity of {item.name}
                   </span>
-                  <Select
-                    cartItem={item}
-                    max="50"
-                  />
+                  <Select cartItem={item} max="50" />
                 </label>
               </Box>
               <Box as="td">
