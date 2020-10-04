@@ -30,5 +30,15 @@ export default {
     color: 'primary',
     py: 2,
     my: 2
+  },
+  text: {
+    default: {
+      color: 'text',
+      mb: 5
+    },
+    caps: {
+      textTransform: 'uppercase',
+      letterSpacing: '0.2em'
+    }
   }
 }
