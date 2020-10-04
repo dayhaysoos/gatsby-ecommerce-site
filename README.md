@@ -18,6 +18,11 @@ From this workshop, you will learn:
 - How to set up serverless functions with netlify
 - How to get to Stripe's Checkout via use-shopping-cart
 
+Make sure you go to your Stripe Dashboard, get your API secret and Public keys, and add them to `.env.development` like this:
+
+GATSBY_STRIPE_API_PUBLIC=pk_test_YOUR_KEY_HERE
+STRIPE_API_SECRET=sk_test_YOUR_KEY_HERE
+
 <!-- You can deploy your site here:
 
 
