@@ -17,3 +17,8 @@ From this workshop, you will learn:
 - How to make accessible components with use-shopping-cart
 - How to set up serverless functions with netlify
 - How to get to Stripe's Checkout via use-shopping-cart
+
+<!-- You can deploy your site here:
+
+
+[![](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/dayhaysoos/gatsby-ecommerce-site/) -->
