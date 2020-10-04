@@ -14,5 +14,21 @@ export default {
     body: 400,
     heading: 700,
     bold: 700
+  },
+  layout: {
+    container: {
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center'
+    }
+  },
+  heading: {
+    fontFamily: 'heading',
+    fontWeight: 'heading',
+    textTransform: 'uppercase',
+    color: 'primary',
+    py: 2,
+    my: 2
   }
 }
