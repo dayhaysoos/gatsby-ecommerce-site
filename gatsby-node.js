@@ -1,13 +1,13 @@
-const products = require("./data/products.json")
+const products = require('./data/products.json')
 
 // Slug for product page path
-const slugify = str => {
+const slugify = (str) => {
   const slug = str
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)+/g, "")
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)+/g, '')
 
-  return `${slug}`.replace(/\/\/+/g, "/")
+  return `${slug}`.replace(/\/\/+/g, '/')
 }
 
 exports.createSchemaCustomization = ({ actions }) => {
@@ -23,6 +23,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     image: String
     currency: String
     description: String
+    tags: [String]
     }
   `
   createTypes(typeDefs)
@@ -32,18 +33,18 @@ exports.createSchemaCustomization = ({ actions }) => {
 exports.sourceNodes = async ({
   actions: { createNode },
   createContentDigest,
-  createNodeId,
+  createNodeId
 }) => {
   // create a node for each product, createNodeId ensure it is unique to the GQL layer
-  return products.map(product => {
+  return products.map((product) => {
     const node = {
       ...product,
       slug: slugify(product.name),
       id: createNodeId(`Product-${product.name}`),
       internal: {
-        type: "Product",
-        contentDigest: createContentDigest(product),
-      },
+        type: 'Product',
+        contentDigest: createContentDigest(product)
+      }
     }
     createNode(node)
   })
@@ -67,8 +68,8 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/products/${node.slug}`,
       component: require.resolve(`./src/templates/product.js`),
       context: {
-        slug: node.slug,
-      },
+        slug: node.slug
+      }
     })
   })
 }
