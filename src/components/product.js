@@ -9,7 +9,6 @@ function Product({ product }) {
 
   return (
     <Box
-      tabIndex="0"
       sx={{
         maxWidth: '768px',
         margin: '0 auto'
