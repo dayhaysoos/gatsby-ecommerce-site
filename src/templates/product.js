@@ -18,3 +18,12 @@ export const query = graphql`
     }
   }
 `
+const ProductTemplate = ({ data }) => {
+  return (
+    <Layout>
+      <Product product={data.product} />
+    </Layout>
+  )
+}
+
+export default ProductTemplate
