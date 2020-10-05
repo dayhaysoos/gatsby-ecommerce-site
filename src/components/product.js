@@ -20,7 +20,7 @@ function Product({ product }) {
           <Image alt={`${product.name}`} src={image} />
         </Box>
         <Box
-          as="article"
+          as="section"
           sx={{
             display: 'flex',
             flexDirection: 'column'
