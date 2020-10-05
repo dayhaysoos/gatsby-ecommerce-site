@@ -9,3 +9,22 @@ const slugify = (str) => {
 
   return `${slug}`.replace(/\/\/+/g, '/')
 }
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+
+  const typeDefs = `
+    type Product implements Node {
+    name: String 
+    sku: String
+    slug: String
+    id: String
+    price: Int
+    image: String
+    currency: String
+    description: String
+    tags: [String]
+    }
+  `
+  createTypes(typeDefs)
+}
