@@ -28,3 +28,24 @@ exports.createSchemaCustomization = ({ actions }) => {
   `
   createTypes(typeDefs)
 }
+
+// create nodes from a source, in this instance, the product.json file
+exports.sourceNodes = async ({
+  actions: { createNode },
+  createContentDigest,
+  createNodeId
+}) => {
+  // create a node for each product, createNodeId ensure it is unique to the GQL layer
+  return products.map((product) => {
+    const node = {
+      ...product,
+      slug: slugify(product.name),
+      id: createNodeId(`Product-${product.name}`),
+      internal: {
+        type: 'Product',
+        contentDigest: createContentDigest(product)
+      }
+    }
+    createNode(node)
+  })
+}
