@@ -49,3 +49,27 @@ exports.sourceNodes = async ({
     createNode(node)
   })
 }
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const result = await graphql(`
+    query {
+      allProduct {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `)
+  result.data.allProduct.edges.forEach(({ node }) => {
+    createPage({
+      path: `/products/${node.slug}`,
+      component: require.resolve(`./src/templates/product.js`),
+      context: {
+        slug: node.slug
+      }
+    })
+  })
+}
