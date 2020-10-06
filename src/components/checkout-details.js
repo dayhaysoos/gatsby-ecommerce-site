@@ -66,6 +66,7 @@ function CheckoutDetails() {
       </Box>
       <Flex sx={{ justifyContent: 'space-evenly', alignItems: 'center' }}>
         <Button onClick={handleCartClick}>Close</Button>
+        <Button onClick={redirectToCheckout}>Checkout</Button>
       </Flex>
     </Box>
   )
