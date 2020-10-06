@@ -46,6 +46,9 @@ function ShoppingCartIcon() {
           {cartCount}
         </Flex>
       )}
+      <span id="cart-count-description" className="visually-hidden">
+        {cartCountDescription}
+      </span>
     </Button>
   )
 }
