@@ -11,25 +11,22 @@ const Header = ({ siteTitle }) => (
       marginBottom: `1.45rem`
     }}
   >
-    <div
+    <Flex
+      as="nav"
       style={{
         margin: `0 auto`,
         maxWidth: 960,
-        padding: `1.45rem 1.0875rem`
+        padding: `1.45rem 1.0875rem`,
+        justifyContent: 'space-evenly'
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
+      <NavLink as={Link} to="/">
+        Home
+      </NavLink>
+      <NavLink as={Link} to="/products">
+        Products
+      </NavLink>
+    </Flex>
   </Box>
 )
 
