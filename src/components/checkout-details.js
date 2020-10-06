@@ -61,6 +61,12 @@ function CheckoutDetails() {
           })}
         </Box>
       </Box>
+      <Box sx={{ textAlign: 'center', marginBottom: '24px' }}>
+        Total Price: {formattedTotalPrice}
+      </Box>
+      <Flex sx={{ justifyContent: 'space-evenly', alignItems: 'center' }}>
+        <Button onClick={handleCartClick}>Close</Button>
+      </Flex>
     </Box>
   )
 }
