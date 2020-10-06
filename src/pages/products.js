@@ -53,6 +53,15 @@ function Products({ data }) {
                   })}
                 </Box>
               </Flex>
+              <Flex sx={{ justifyContent: 'center' }}>
+                <Button
+                  onClick={() => addItem(product)}
+                  sx={{ backgroundColor: 'teal' }}
+                  alt={`Add ${product.name} to cart`}
+                >
+                  Add to Cart
+                </Button>
+              </Flex>
             </Box>
           )
         })}
