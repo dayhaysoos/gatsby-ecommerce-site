@@ -22,8 +22,8 @@ From this workshop, you will learn:
 
 Make sure you go to your Stripe Dashboard, get your API secret and Public keys, and add them to `.env.development` like this:
 
-GATSBY_STRIPE_API_PUBLIC=pk_test_YOUR_KEY_HERE
-STRIPE_API_SECRET=sk_test_YOUR_KEY_HERE
+`GATSBY_STRIPE_API_PUBLIC=pk_test_YOUR_KEY_HERE`
+`STRIPE_API_SECRET=sk_test_YOUR_KEY_HERE`
 
 1. Install the Netlify CLI
 2. Run ntl login to hook up to their Netlify account
