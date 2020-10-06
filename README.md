@@ -32,4 +32,4 @@ Make sure you go to your Stripe Dashboard, get your API secret and Public keys, 
 5. ntl link to hook up to it
 6. ntl dev to build
 
-[![](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/dayhaysoos/gatsby-ecommerce-site/)
+[![](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/dayhaysoos/gatsby-ecommerce-site)
