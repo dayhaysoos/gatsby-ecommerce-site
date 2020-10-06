@@ -18,12 +18,18 @@ From this workshop, you will learn:
 - How to set up serverless functions with netlify
 - How to get to Stripe's Checkout via use-shopping-cart
 
+## Get Started
+
 Make sure you go to your Stripe Dashboard, get your API secret and Public keys, and add them to `.env.development` like this:
 
 GATSBY_STRIPE_API_PUBLIC=pk_test_YOUR_KEY_HERE
 STRIPE_API_SECRET=sk_test_YOUR_KEY_HERE
 
-<!-- You can deploy your site here:
+1. Install the Netlify CLI
+2. Run ntl login to hook up to their Netlify account
+3. Click the Deploy to Netlify Button below to create a copy of the workshop repo
+4. Clone the repo you just created
+5. ntl link to hook up to it
+6. ntl dev to build
 
-
-[![](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/dayhaysoos/gatsby-ecommerce-site/) -->
+[![](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/dayhaysoos/gatsby-ecommerce-site/)
