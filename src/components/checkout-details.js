@@ -13,6 +13,24 @@ function CheckoutDetails() {
     redirectToCheckout
   } = useShoppingCart()
 
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+
+    const response = await fetch('/.netlify/functions/create-session', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(cartDetails)
+    })
+      .then((res) => {
+        return res.json()
+      })
+      .catch((error) => console.log(error))
+
+    redirectToCheckout({ sessionId: response.sessionId })
+  }
+
   return (
     <Box as="form">
       <Box sx={{ marginBottom: '24px' }} as="table">
@@ -66,7 +84,7 @@ function CheckoutDetails() {
       </Box>
       <Flex sx={{ justifyContent: 'space-evenly', alignItems: 'center' }}>
         <Button onClick={handleCartClick}>Close</Button>
-        <Button onClick={redirectToCheckout}>Checkout</Button>
+        <Button onClick={handleSubmit}>Checkout</Button>
       </Flex>
     </Box>
   )
