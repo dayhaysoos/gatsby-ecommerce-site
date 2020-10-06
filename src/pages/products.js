@@ -44,7 +44,7 @@ function Products({ data }) {
                   textDecoration: 'none'
                 }}
               >
-                <Image src={product.image} />
+                <Image alt={product.name} src={product.image} />
                 <Box as="p">{product.name}</Box>
                 <Box as="p">
                   {formatCurrencyString({

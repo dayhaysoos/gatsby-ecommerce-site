@@ -35,9 +35,9 @@ function Product({ product }) {
             <Box as="p">{formatCurrencyString({ value: price, currency })}</Box>
           </Box>
           <Button
+            aria-label={`Add ${name} to cart`}
             onClick={() => addItem(product)}
             sx={{ backgroundColor: 'teal' }}
-            alt={`Add ${name} to cart`}
           >
             Add to Cart
           </Button>

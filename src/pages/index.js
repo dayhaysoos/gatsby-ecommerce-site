@@ -61,6 +61,7 @@ const IndexPage = () => {
         <Grid columns={[1, 2]}>
           <Box>
             <Image
+              alt="Picture of Bill Murray"
               sx={{ backgroundSize: 'contain' }}
               src={'https://www.fillmurray.com/400/300'}
             />
@@ -95,6 +96,7 @@ const IndexPage = () => {
           </Box>
           <Box>
             <Image
+              alt="Picture of Bill Murray"
               sx={{ backgroundSize: 'contain' }}
               src={'https://www.fillmurray.com/400/300'}
             />
