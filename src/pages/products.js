@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Button, Grid, Image } from 'theme-ui'
+import { Box, Button, Grid, Image, Flex } from 'theme-ui'
 import Layout from '../components/layout'
 import { useShoppingCart, formatCurrencyString } from 'use-shopping-cart'
 import { graphql, Link } from 'gatsby'
@@ -22,9 +22,41 @@ export const query = graphql`
 `
 
 function Products({ data }) {
+  const { addItem } = useShoppingCart()
+  const products = data.allProduct.nodes
   return (
     <Layout>
-      <h1>Produts page</h1>
+      <Grid columns={4}>
+        {products.map((product) => {
+          return (
+            <Box key={product.id}>
+              <Flex
+                to={`${product.slug}`}
+                as={Link}
+                sx={{
+                  paddingTop: '24px',
+                  paddingBottom: '24px',
+                  flexDirection: 'column',
+                  color: 'primary',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  fontWeight: '700',
+                  textDecoration: 'none'
+                }}
+              >
+                <Image src={product.image} />
+                <Box as="p">{product.name}</Box>
+                <Box as="p">
+                  {formatCurrencyString({
+                    value: product.price,
+                    currency: 'USD'
+                  })}
+                </Box>
+              </Flex>
+            </Box>
+          )
+        })}
+      </Grid>
     </Layout>
   )
 }
