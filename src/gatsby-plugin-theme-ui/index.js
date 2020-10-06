@@ -11,18 +11,16 @@ export default {
       }
     }
   },
-  body: {
-    mb: [8, 12, 16]
+  fonts: {
+    body:
+      'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
+    heading: 'Georgia, serif',
+    monospace: 'Menlo, monospace'
   },
-  links: {
-    nav: {
-      color: 'white',
-      transition: '0.5s all ease',
-      '&:hover, &:focus': {
-        transform: 'scale(1.1)',
-        color: 'white'
-      }
-    }
+  fontWeights: {
+    body: 400,
+    heading: 700,
+    bold: 700
   },
   layout: {
     container: {
@@ -32,6 +30,14 @@ export default {
       alignItems: 'center'
     }
   },
+  heading: {
+    fontFamily: 'heading',
+    fontWeight: 'heading',
+    textTransform: 'uppercase',
+    color: 'primary',
+    py: 2,
+    my: 2
+  },
   text: {
     default: {
       color: 'text',
@@ -40,15 +46,16 @@ export default {
     caps: {
       textTransform: 'uppercase',
       letterSpacing: '0.2em'
-    },
-    heading: {
-      fontFamily: 'heading',
-      fontWeight: 'heading',
-      lineHeight: 'heading',
-      textTransform: 'uppercase',
-      color: 'primary',
-      py: 2,
-      my: 2
+    }
+  },
+  links: {
+    nav: {
+      color: 'white',
+      transition: '0.5s all ease',
+      '&:hover, &:focus': {
+        transform: 'scale(1.1)',
+        color: 'white'
+      }
     }
   }
 }
