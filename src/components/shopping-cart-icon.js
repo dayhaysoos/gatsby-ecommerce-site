@@ -49,3 +49,5 @@ function ShoppingCartIcon() {
     </Button>
   )
 }
+
+export default ShoppingCartIcon

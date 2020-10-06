@@ -2,6 +2,7 @@ import { Link } from 'gatsby'
 import { NavLink, Flex, Box } from 'theme-ui'
 import PropTypes from 'prop-types'
 import React from 'react'
+import ShoppingCartIcon from './shopping-cart-icon'
 
 const Header = ({ siteTitle }) => (
   <Box
@@ -26,6 +27,7 @@ const Header = ({ siteTitle }) => (
       <NavLink as={Link} to="/products">
         Products
       </NavLink>
+      <ShoppingCartIcon />
     </Flex>
   </Box>
 )
