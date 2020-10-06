@@ -2,6 +2,8 @@ import React from 'react'
 import { useShoppingCart } from 'use-shopping-cart'
 import { Box, Flex, Button, Close } from 'theme-ui'
 
+import Select from './select'
+
 function CheckoutDetails() {
   const {
     cartDetails,
@@ -44,6 +46,7 @@ function CheckoutDetails() {
                     <span className={`visually-hidden`}>
                       Quantity of {item.name}
                     </span>
+                    <Select cartItem={item} max="50" />
                   </label>
                 </Box>
                 <Box as="td">
