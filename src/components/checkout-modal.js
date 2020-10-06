@@ -3,6 +3,7 @@ import { jsx } from 'theme-ui'
 import { useShoppingCart } from 'use-shopping-cart'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import '@reach/dialog/styles.css'
+import CheckoutDetails from './checkout-details'
 
 function CheckoutModal() {
   const { shouldDisplayCart, handleCloseCart, cartCount } = useShoppingCart()
@@ -17,7 +18,7 @@ function CheckoutModal() {
             No items in cart
           </h2>
         ) : (
-          <h2>Checkout details here</h2>
+          <CheckoutDetails />
         )}
       </DialogContent>
     </DialogOverlay>
