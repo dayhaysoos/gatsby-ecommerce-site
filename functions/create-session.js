@@ -22,7 +22,7 @@ exports.handler = async (event) => {
     })
 
     return {
-      satusCode: 200,
+      statusCode: 200,
       body: JSON.stringify({ sessionId: session.id })
     }
   } catch (error) {
