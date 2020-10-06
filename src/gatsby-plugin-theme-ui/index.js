@@ -47,5 +47,15 @@ export default {
       textTransform: 'uppercase',
       letterSpacing: '0.2em'
     }
+  },
+  links: {
+    nav: {
+      color: 'white',
+      transition: '0.5s all ease',
+      '&:hover, &:focus': {
+        transform: 'scale(1.1)',
+        color: 'white'
+      }
+    }
   }
 }
