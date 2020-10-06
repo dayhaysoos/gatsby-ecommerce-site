@@ -12,6 +12,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Header from './header'
 import './layout.css'
 import SkipLink from './skip-link'
+import CheckoutModal from './checkout-modal'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -46,6 +47,7 @@ const Layout = ({ children }) => {
           <a href="https://www.gatsbyjs.com">Gatsby</a>
         </footer>
       </div>
+      <CheckoutModal />
     </>
   )
 }
