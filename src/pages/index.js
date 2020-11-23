@@ -1,16 +1,15 @@
 import React from 'react'
-import { Link as GatsbyLink } from 'gatsby'
+import { Link } from 'gatsby'
 import {
-  Box,
   Container,
+  Heading,
   Grid,
   Card,
   Text,
-  Heading,
+  Box,
   Image,
-  Link,
-  useColorMode,
-  Button
+  Button,
+  useColorMode
 } from 'theme-ui'
 
 import Layout from '../components/layout'
@@ -18,7 +17,6 @@ import SEO from '../components/seo'
 
 const IndexPage = () => {
   const [colorMode, setColorMode] = useColorMode()
-
   return (
     <Layout>
       <SEO title="Home" />
@@ -31,8 +29,6 @@ const IndexPage = () => {
       </Button>
       <Container>
         <Heading as="h1">Very Good Fruit Store</Heading>
-
-        <Heading>Features</Heading>
         <Grid gap={20} columns={[1, 2, 3]}>
           <Card>
             <Heading>Fresh</Heading>
@@ -65,6 +61,7 @@ const IndexPage = () => {
         <Grid columns={[1, 2]}>
           <Box>
             <Image
+              alt="Picture of Bill Murray"
               sx={{ backgroundSize: 'contain' }}
               src={'https://www.fillmurray.com/400/300'}
             />
@@ -99,15 +96,13 @@ const IndexPage = () => {
           </Box>
           <Box>
             <Image
+              alt="Picture of Bill Murray"
               sx={{ backgroundSize: 'contain' }}
               src={'https://www.fillmurray.com/400/300'}
             />
           </Box>
         </Grid>
       </Container>
-      <Link as={GatsbyLink} to="/products">
-        Click here to see products
-      </Link>
     </Layout>
   )
 }

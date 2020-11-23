@@ -8,16 +8,11 @@ function Product({ product }) {
   const { addItem } = useShoppingCart()
 
   return (
-    <Box
-      sx={{
-        maxWidth: '768px',
-        margin: '0 auto'
-      }}
-    >
+    <Box sx={{ maxWidth: '768px', margin: '0 auto' }}>
       <SEO title={name} />
       <Grid sx={{ color: 'primary', fontWeight: '700' }} columns={[1, 2]}>
         <Box>
-          <Image alt={`${product.name}`} src={image} />
+          <Image alt={`${name}`} src={image} />
         </Box>
         <Box
           as="section"
@@ -40,9 +35,9 @@ function Product({ product }) {
             <Box as="p">{formatCurrencyString({ value: price, currency })}</Box>
           </Box>
           <Button
+            aria-label={`Add ${name} to cart`}
             onClick={() => addItem(product)}
             sx={{ backgroundColor: 'teal' }}
-            alt={`Add ${product.name} to cart`}
           >
             Add to Cart
           </Button>
