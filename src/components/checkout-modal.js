@@ -10,6 +10,7 @@ function CheckoutModal() {
   return (
     <DialogOverlay onDismiss={handleCloseCart} isOpen={shouldDisplayCart}>
       <DialogContent
+        aria-label={'Cart Count'}
         sx={{ backgroundColor: 'background', width: ['100vw', '90vw'] }}
       >
         {cartCount === 0 ? (
